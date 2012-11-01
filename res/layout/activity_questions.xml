@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/contests_bg" >
+
+    <Button 
+        android:id="@+id/back"
+        android:layout_width="60dip"
+    	android:layout_height="50dip"
+    	android:text="back"
+    	android:textColor="#040404"/>
+    
+     <ProgressBar
+         android:id="@+id/progressBarTimer"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentRight="true"
+         android:layout_alignParentTop="true" />
+     
+     <TextView
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:textColor="#040404"
+        android:id="@+id/txtTimer"
+        android:typeface="sans"
+        android:textSize="15dip"
+       	android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="30"/>
+
+    
+    <Button 
+        android:id="@+id/answer1"
+        android:layout_width="fill_parent"
+    	android:layout_height="50dip"
+    	android:text="Answer 1"
+    	android:textColor="#040404"
+    	android:layout_centerVertical="true"/>
+    <Button 
+        android:id="@+id/answer2"
+        android:layout_width="fill_parent"
+    	android:layout_height="50dip"
+    	android:text="Answer 2"
+    	android:textColor="#040404"
+    	android:layout_below="@id/answer1"/>
+    <Button 
+        android:id="@+id/answer3"
+        android:layout_width="fill_parent"
+    	android:layout_height="50dip"
+    	android:text="Answer 3"
+    	android:textColor="#040404"
+    	android:layout_below="@id/answer2"/>
+    <Button 
+        android:id="@+id/answer4"
+        android:layout_width="fill_parent"
+    	android:layout_height="50dip"
+    	android:text="Answer 4"
+    	android:textColor="#040404"
+    	android:layout_below="@id/answer3"/>
+     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:id="@+id/question"
+        android:typeface="sans"
+        android:textSize="15dip"
+       	android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/answer1"
+        android:text="Whats my name?"/>
+
+    
+
+</RelativeLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:baselineAligned="false"
+    android:layout_height="58dip"
+    android:background="@drawable/gradient_bg"
+    android:orientation="horizontal" >
+    
+    <!--  ListRow Left side -->
+    <RelativeLayout 
+        android:id="@+id/list_left"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:padding="2dip"
+        android:background="@drawable/list_selector">
+        
+        <ImageView 
+            android:src="@drawable/arrow_left"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+        <TextView
+            android:id="@+id/JoinLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#040404"
+        	android:typeface="sans"
+        	android:textSize="10sp"
+       		android:text ="JOIN"/>
+        <TextView
+            android:id="@+id/GroupLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#040404"
+        	android:typeface="sans"
+        	android:textSize="14sp"
+        	android:textStyle="bold"
+       		android:text ="Boys"/>
+        <RelativeLayout
+        	android:layout_height="match_parent"
+        	android:layout_width="wrap_content"
+        	android:layout_alignParentRight="true">
+	        <TextView
+			        android:id="@+id/percentageLeft"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:layout_alignParentBottom="true"
+			        android:text="22%"
+			        android:textColor="#040404"
+			        android:typeface="sans"
+			        android:textSize="8sp"/>
+	        
+	        <com.example.groupbattle2.VerticalProgressBar 
+			        style="?android:attr/progressBarStyleHorizontal"
+			        android:id="@+id/LeftProgress"
+			        android:layout_width="8sp"
+			        android:layout_height="44sp"
+			        android:progress="22"
+			        android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+    
+    <!--  ListRow Center -->
+    <RelativeLayout 
+        android:id="@+id/list_center"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:padding="2dp"
+        android:background="@drawable/list_selector">
+        
+        <TextView
+            android:id="@+id/numOfPlayers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="#040404"
+        	android:typeface="sans"
+        	android:textSize="14sp"
+       		android:text ="50 Players"/>
+        
+        
+        
+        <!-- Contest ends in.... -->
+        <TextView
+            android:id="@+id/ContestEnds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:typeface="sans"
+        	android:textSize="8dip"
+        	android:textColor="#040404"
+       		android:textStyle="bold"
+            android:text ="Ends in 2 days 22 hrs"/>
+        
+        <TextView 
+	        android:id="@+id/topic"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerInParent="true"
+	        android:text="General Knowledge"
+	        android:textColor="#040404"
+	        android:typeface="sans"
+	        android:textSize="10dip"
+	        android:textStyle="bold"
+	        android:layout_centerHorizontal="true"/>
+        
+    </RelativeLayout>
+    
+    <!--  ListRow Right side -->
+    <RelativeLayout 
+        android:id="@+id/list_right"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:padding="2dip"
+        android:background="@drawable/list_selector">
+        
+        <ImageView 
+            android:src="@drawable/arrow_right"
+            android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/JoinRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:textColor="#040404"
+        	android:typeface="sans"
+        	android:textSize="10sp"
+       		android:text ="JOIN"/>
+        <TextView
+            android:id="@+id/GroupRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#040404"
+        	android:typeface="sans"
+        	android:textSize="14sp"
+        	android:textStyle="bold"
+       		android:text ="Girls"/>
+        <RelativeLayout
+        	android:layout_height="match_parent"
+        	android:layout_width="wrap_content"
+        	android:layout_alignParentLeft="true">
+	        <TextView
+			        android:id="@+id/percentageRight"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_centerHorizontal="true"
+			        android:layout_alignParentBottom="true"
+			        android:text="78%"
+			        android:textColor="#040404"
+			        android:typeface="sans"
+			        android:textSize="8sp"/>
+	        
+	        <com.example.groupbattle2.VerticalProgressBar 
+			        style="?android:attr/progressBarStyleHorizontal"
+			        android:id="@+id/RightProgress"
+			        android:layout_width="8sp"
+			        android:layout_height="44sp"
+			        android:progress="78"
+			        android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    
+
+</LinearLayout>
