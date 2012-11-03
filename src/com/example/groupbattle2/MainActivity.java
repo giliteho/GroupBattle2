@@ -52,10 +52,7 @@ public class MainActivity extends Activity {
         
         SessionEvents.addAuthListener(new FbAPIsAuthListener());
         SessionEvents.addLogoutListener(new FbAPIsLogoutListener());
-        
-	            
-        mText = (TextView) findViewById(R.id.txt);
-        mUserPic = (ImageView) findViewById(R.id.user_pic);
+       
         String[] permissions = { "offline_access", "email", "user_photos", "user_birthday"};
 
         mLoginButton = (LoginButton) findViewById(R.id.login);

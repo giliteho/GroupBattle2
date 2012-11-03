@@ -21,7 +21,7 @@
         android:layout_width="fill_parent"
     	android:layout_height="50dip"
     	android:text="Create New Contest"
-    	android:textColor="#33FF33"
+    	android:textColor="#040404"
     	android:layout_below="@id/settings"
     	android:paddingBottom = "3dip"/>
     
