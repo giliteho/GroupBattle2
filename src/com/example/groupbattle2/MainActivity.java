@@ -34,8 +34,6 @@ public class MainActivity extends Activity {
 	
 	
 	private LoginButton mLoginButton;
-    private TextView mText;
-    private ImageView mUserPic;
     private Handler mHandler;
     public static AndroidHttpClient httpclient = null;
     
@@ -51,7 +49,7 @@ public class MainActivity extends Activity {
         
         
         SessionEvents.addAuthListener(new FbAPIsAuthListener());
-        SessionEvents.addLogoutListener(new FbAPIsLogoutListener());
+        //SessionEvents.addLogoutListener(new FbAPIsLogoutListener());
        
         String[] permissions = { "offline_access", "email", "user_photos", "user_birthday"};
 
@@ -109,21 +107,6 @@ public class MainActivity extends Activity {
         ServerManager.GetListOfGlobalContests();*/
         
     }
-    
-    
-    @Override
-    public void onResume() {
-        super.onResume();
-        if(Utility.mFacebook != null) {
-            if (!Utility.mFacebook.isSessionValid()) {
-                mText.setText("You are logged out! ");
-                mUserPic.setImageBitmap(null);
-            } else {
-            	Utility.mFacebook.extendAccessTokenIfNeeded(this, null);
-            }
-        }
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -149,24 +132,7 @@ public class MainActivity extends Activity {
 
     
 
-	
-/*
- * The Callback for notifying the application when log out starts and
- * finishes.
- */
-	public class FbAPIsLogoutListener implements LogoutListener {
-		@Override
-		public void onLogoutBegin() {
-			mText.setText("Logging out...");
-		}
 
-		@Override
-		public void onLogoutFinish() {
-			mText.setText("You have logged out! ");
-			mUserPic.setImageBitmap(null);
-		}
-	}
-	
 	/*
      * Callback for fetching current user's name, picture, uid.
      */
@@ -198,7 +164,7 @@ public class MainActivity extends Activity {
         
         @Override
         protected void onPostExecute(Object result) {
-        	mUserPic.setImageBitmap((Bitmap)result);
+        	//mUserPic.setImageBitmap((Bitmap)result);
         } 
         
 
@@ -248,11 +214,14 @@ public class MainActivity extends Activity {
     	@Override
     	public void onAuthSucceed() {
     		requestUserData();
+    		Intent i = new Intent(getApplicationContext(), Contests.class);
+			startActivity(i);
     	}
 
     	@Override
     	public void onAuthFail(String error) {
-    		//mText.setText("Login Failed: " + error);
+    		Intent i = new Intent(getApplicationContext(), MainActivity.class);
+			startActivity(i);
     	}
     }
     

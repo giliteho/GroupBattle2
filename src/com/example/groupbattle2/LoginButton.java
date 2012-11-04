@@ -90,18 +90,10 @@ public class LoginButton extends ImageButton {
                 SessionEvents.onLogoutBegin();
                 AsyncFacebookRunner asyncRunner = new AsyncFacebookRunner(mFb);
                 asyncRunner.logout(getContext(), new LogoutRequestListener());
-                try{
-                Intent i = new Intent(appContext, MainActivity.class);
-				appContext.startActivity(i);
-                }catch(Exception e) 
-                {
-                	int a = 4;
-                	}
                 
             } else {
                 mFb.authorize(mActivity, mPermissions, mActivityCode, new LoginDialogListener());
-                //Intent i = new Intent(appContext, Contests.class);
-				//appContext.startActivity(i);
+                
             }
         }
     }
@@ -151,6 +143,7 @@ public class LoginButton extends ImageButton {
         public void onAuthSucceed() {
             setImageResource(R.drawable.logout_button);
             SessionStore.save(mFb, getContext());
+            
         }
 
         @Override
@@ -165,6 +158,7 @@ public class LoginButton extends ImageButton {
         public void onLogoutFinish() {
             SessionStore.clear(getContext());
             setImageResource(R.drawable.login_button);
+            
         }
     }
 
