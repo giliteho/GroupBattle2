@@ -9,13 +9,6 @@
         android:layout_width="50dip"
     	android:layout_height="50dip"
     	android:background="@drawable/settings"/>
-    <TextView 
-        android:id="@+id/logoHolder"
-        android:layout_width="fill_parent"
-    	android:layout_height="wrap_content"
-    	android:text="Logo"
-    	android:textSize="10dip"
-    	android:layout_centerHorizontal="true"/>
     <Button 
         android:id="@+id/newcontest"
         android:layout_width="fill_parent"
