@@ -44,9 +44,7 @@ public class ServerManager {
         try {
         	// request me object
 			String response = Utility.mFacebook.request("me", bundle);
-		
-			
-			
+
 			
 			//parse me object
 			JSONObject jsonObject = new JSONObject(response);

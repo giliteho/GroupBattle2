@@ -62,37 +62,7 @@ public class MainActivity extends Activity {
          */
        mLoginButton.init(this, AUTHORIZE_ACTIVITY_RESULT_CODE, Utility.mFacebook, permissions);
 
-        if (Utility.mFacebook.isSessionValid()) {
-        	final class LoginToServer extends AsyncTask<Void, Void, Void>
-    		{
-
-    			@Override
-    			protected Void doInBackground ( Void... params ){
-    				
-    				boolean res = ServerManager.LoginToServer();
-    				
-    				if(res)
-    				{
-    					//ServerManager.GetContestLists();
-    				}
-    				else
-    				{
-    					//stay in main!!
-    				}
-    				
-    				
-    				return null;
-    			}
-    	
-    			@Override
-    			protected void onPostExecute(Void v){
-    				finish();
-    	            Intent intent = new Intent().setClass(MainActivity.this, Contests.class);
-    	            startActivity(intent);
-    			}
-    		}
-    		new LoginToServer().execute();
-        }
+        
 
          
         //StrictMode.setThreadPolicy( new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().detectAll ( ).penaltyLog().build());
@@ -213,15 +183,44 @@ public class MainActivity extends Activity {
 
     	@Override
     	public void onAuthSucceed() {
-    		requestUserData();
-    		Intent i = new Intent(getApplicationContext(), Contests.class);
-			startActivity(i);
+    		if (Utility.mFacebook.isSessionValid()) {
+            	final class LoginToServer extends AsyncTask<Void, Void, Void>
+        		{
+
+        			@Override
+        			protected Void doInBackground ( Void... params ){
+        				
+        				
+        				boolean res = ServerManager.LoginToServer();
+        				
+        				if(res)
+        				{
+        					//ServerManager.GetContestLists();
+        				}
+        				else
+        				{
+        					
+        				}
+        				
+        				
+        				return null;
+        			}
+        	
+        			@Override
+        			protected void onPostExecute(Void v){
+        				finish();
+        	            Intent intent = new Intent().setClass(MainActivity.this, Contests.class);
+        	            startActivity(intent);
+        			}
+        		}
+        		new LoginToServer().execute();
+            }
+    		
     	}
 
     	@Override
     	public void onAuthFail(String error) {
-    		Intent i = new Intent(getApplicationContext(), MainActivity.class);
-			startActivity(i);
+    		Utility.Assert("failed to login");
     	}
     }
     
